@@ -11,11 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
+var app_constants_1 = require('./app.constants');
 var HeroService = (function () {
-    function HeroService(http) {
+    function HeroService(http, configuration) {
         this.http = http;
-        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.heroesUrl = 'api/heroes'; // URL to web api
+        this.heroesUrl = configuration.ServerWithApiUrl + 'heroes/';
+        this.headers = new http_1.Headers();
+        this.headers.append('Content-Type', 'application/json');
+        this.headers.append('Accept', 'application/json');
     }
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl)
@@ -58,7 +61,7 @@ var HeroService = (function () {
     };
     HeroService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, app_constants_1.Configuration])
     ], HeroService);
     return HeroService;
 }());

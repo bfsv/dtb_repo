@@ -1,39 +1,39 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://dtb_user:DtB_Us3r@127.0.0.1:27017/dtb_db', ['todos']);
+var db = mongojs('mongodb://dtb_user:DtB_Us3r@127.0.0.1:27017/dtb_db', ['heroes']);
 /* GET All Todos */
 router.get('/heroes', function (req, res, next) {
-    db.todos.find(function (err, todos) {
+    db.heroes.find(function (err, heroes) {
         if (err) {
             res.send(err);
         } else {
-            res.json(todos);
+            res.json(heroes);
         }
     });
 });
 /* GET One Todo with the provided ID */
 router.get('/heroes/:id', function (req, res, next) {
-    db.todos.findOne({
+    db.heroes.findOne({
         _id: mongojs.ObjectId(req.params.id)
-    }, function (err, todos) {
+    }, function (err, heroes) {
         if (err) {
             res.send(err);
         } else {
-            res.json(todos);
+            res.json(heroes);
         }
     });
 });
 /* POST/SAVE a Todo */
 router.post('/heroes', function (req, res, next) {
-    var todo = req.body;
-    if (!todo.text || !(todo.isCompleted + '')) {
+    var hero = req.body;
+    if (!hero.text || !(hero.isCompleted + '')) {
         res.status(400);
         res.json({
             "error": "Invalid Data"
         });
     } else {
-        db.todos.save(todo, function (err, result) {
+        db.heroes.save(hero, function (err, result) {
             if (err) {
                 res.send(err);
             } else {
@@ -44,13 +44,13 @@ router.post('/heroes', function (req, res, next) {
 });
 /* PUT/UPDATE a Todo */
 router.put('/heroes/:id', function (req, res, next) {
-    var todo = req.body;
+    var hero = req.body;
     var updObj = {};
-    if (todo.isCompleted) {
-        updObj.isCompleted = todo.isCompleted;
+    if (hero.isCompleted) {
+        updObj.isCompleted = hero.isCompleted;
     }
-    if (todo.text) {
-        updObj.text = todo.text;
+    if (hero.text) {
+        updObj.text = hero.text;
     }
     if (!updObj) {
         res.status(400);
@@ -58,7 +58,7 @@ router.put('/heroes/:id', function (req, res, next) {
             "error": "Invalid Data"
         });
     } else {
-        db.todos.update({
+        db.heroes.update({
             _id: mongojs.ObjectId(req.params.id)
         }, updObj, {}, function (err, result) {
             if (err) {
@@ -71,7 +71,7 @@ router.put('/heroes/:id', function (req, res, next) {
 });
 /* DELETE a Todo */
 router.delete('/heroes/:id', function (req, res) {
-    db.todos.remove({
+    db.heroes.remove({
         _id: mongojs.ObjectId(req.params.id)
     }, '', function (err, result) {
         if (err) {

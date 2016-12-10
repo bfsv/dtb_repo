@@ -1,4 +1,5 @@
 "use strict";
+// Hero Class
 var Hero = (function () {
     function Hero() {
     }
