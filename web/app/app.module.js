@@ -23,6 +23,7 @@ var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var hero_search_component_1 = require('./hero-search.component');
+var app_constants_1 = require('./app.constants');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,7 +43,7 @@ var AppModule = (function () {
                 heroes_component_1.HeroesComponent,
                 hero_search_component_1.HeroSearchComponent
             ],
-            providers: [hero_service_1.HeroService],
+            providers: [hero_service_1.HeroService, app_constants_1.Configuration],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

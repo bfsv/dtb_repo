@@ -15,12 +15,12 @@ var app_constants_1 = require('./app.constants');
 var HeroService = (function () {
     function HeroService(http, configuration) {
         this.http = http;
-        this.heroesUrl = configuration.ServerWithApiUrl + 'heroes/';
+        this.heroesUrl = configuration.ServerWithApiUrl + '/heroes';
         this.headers = new http_1.Headers();
         this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
     }
     HeroService.prototype.getHeroes = function () {
+        console.log(">>>>>> getHeroes :" + this.heroesUrl);
         return this.http.get(this.heroesUrl)
             .toPromise()
             .then(function (response) { return response.json().data; })
@@ -48,7 +48,7 @@ var HeroService = (function () {
             .catch(this.handleError);
     };
     HeroService.prototype.update = function (hero) {
-        var url = this.heroesUrl + "/" + hero.id;
+        var url = this.heroesUrl + "/" + hero._id;
         return this.http
             .put(url, JSON.stringify(hero), { headers: this.headers })
             .toPromise()
@@ -56,7 +56,7 @@ var HeroService = (function () {
             .catch(this.handleError);
     };
     HeroService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred in HeroService : ', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
     HeroService = __decorate([

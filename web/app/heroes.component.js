@@ -37,7 +37,7 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.delete = function (hero) {
         var _this = this;
         this.heroService
-            .delete(hero.id)
+            .delete(hero._id)
             .then(function () {
             _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
             if (_this.selectedHero === hero) {
@@ -52,7 +52,7 @@ var HeroesComponent = (function () {
         this.selectedHero = hero;
     };
     HeroesComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+        this.router.navigate(['/detail', this.selectedHero._id]);
     };
     HeroesComponent = __decorate([
         core_1.Component({
