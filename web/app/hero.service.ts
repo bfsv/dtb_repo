@@ -19,7 +19,7 @@ export class HeroService {
 	getHeroes(): Observable<Hero[]> {
 		console.log(">>>>>> getHeroes :" + this.heroesUrl);
 		return this.http.get(this.heroesUrl)
-			.map((res: Response) => res.text())
+			.map((res: Response) => <Hero[]>res.json())
 			.catch(this.handleError);
 	}
 	getHero(id: String): Promise<Hero> {

@@ -20,9 +20,7 @@ var HeroesComponent = (function () {
         var _this = this;
         this.heroService
             .getHeroes()
-            .subscribe(function (heroes) { return _this.heroes = heroes; }, //Bind to view
-        function (//Bind to view
-            err) { return console.log(err); }, function () { return console.log('Get Heroes Complete'); });
+            .subscribe(function (data) { return _this.heroes = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all Heroes complete'); });
     };
     HeroesComponent.prototype.add = function (name) {
         var _this = this;
