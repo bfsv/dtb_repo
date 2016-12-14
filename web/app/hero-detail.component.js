@@ -22,7 +22,7 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.heroService.getHero(+params['id']); })
+            .switchMap(function (params) { return _this.heroService.getHero(params['id']); })
             .subscribe(function (hero) { return _this.hero = hero; });
     };
     HeroDetailComponent.prototype.save = function () {

@@ -18,7 +18,12 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes()
-            .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+            .subscribe(function (heroes) { return _this.heroes = heroes.slice(1, 5); }, //Bind to view
+        function (//Bind to view
+            err) {
+            // Log errors if any
+            console.log(err);
+        });
     };
     DashboardComponent = __decorate([
         core_1.Component({

@@ -17,7 +17,10 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService
       .getHeroes()
-      .then(heroes => this.heroes = heroes);
+      .subscribe(
+      heroes => this.heroes = heroes, //Bind to view
+      err => console.log(err),
+      () => console.log('Get Heroes Complete'));
   }
   add(name: string): void {
     name = name.trim();

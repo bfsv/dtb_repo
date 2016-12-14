@@ -22,8 +22,7 @@ var HeroService = (function () {
     HeroService.prototype.getHeroes = function () {
         console.log(">>>>>> getHeroes :" + this.heroesUrl);
         return this.http.get(this.heroesUrl)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
+            .map(function (res) { return res.text(); })
             .catch(this.handleError);
     };
     HeroService.prototype.getHero = function (id) {

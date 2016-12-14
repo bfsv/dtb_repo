@@ -8,8 +8,8 @@ router.get('/heroes', function (req, res, next) {
         if (err) {
             res.send(err);
         } else {
-            //res.json(heroes);
-	    res.send({"_id":"1","name":"test"});
+            res.json(heroes);
+	    //res.send('{"_id":1,"name":"test"}');
         }
     });
 });
