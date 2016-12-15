@@ -28,8 +28,7 @@ var HeroService = (function () {
     HeroService.prototype.getHero = function (id) {
         var url = this.heroesUrl + "/" + id;
         return this.http.get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
+            .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     HeroService.prototype.delete = function (id) {
@@ -42,8 +41,7 @@ var HeroService = (function () {
     HeroService.prototype.create = function (name) {
         return this.http
             .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
-            .toPromise()
-            .then(function (res) { return res.json().data; })
+            .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     HeroService.prototype.update = function (hero) {

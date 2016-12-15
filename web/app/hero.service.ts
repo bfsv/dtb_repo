@@ -22,11 +22,10 @@ export class HeroService {
 			.map((res: Response) => <Hero[]>res.json())
 			.catch(this.handleError);
 	}
-	getHero(id: String): Promise<Hero> {
+	getHero(id: String): Observable<Hero> {
 		const url = `${this.heroesUrl}/${id}`;
 		return this.http.get(url)
-			.toPromise()
-			.then(response => response.json().data as Hero)
+			.map((res: Response) => <Hero>res.json())
 			.catch(this.handleError);
 	}
 	delete(id: String): Promise<void> {
@@ -36,11 +35,10 @@ export class HeroService {
 			.then(() => null)
 			.catch(this.handleError);
 	}
-	create(name: string): Promise<Hero> {
+	create(name: string): Observable<Hero> {
 		return this.http
 			.post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
-			.toPromise()
-			.then(res => res.json().data)
+			.map((response: Response) => <Hero>response.json())
 			.catch(this.handleError);
 	}
 	update(hero: Hero): Promise<Hero> {

@@ -23,12 +23,12 @@ export class HeroesComponent implements OnInit {
   }
   add(name: string): void {
     name = name.trim();
+    console.log('Add Hero : ' + name)
     if (!name) { return; }
     this.heroService.create(name)
-      .then(hero => {
-        this.heroes.push(hero);
-        this.selectedHero = null;
-      });
+      .subscribe((data: Hero) =>
+        this.heroes.push(data),
+      this.selectedHero = null);
   }
   delete(hero: Hero): void {
     this.heroService
