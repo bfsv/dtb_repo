@@ -52,6 +52,12 @@ var HeroService = (function () {
             .then(function () { return hero; })
             .catch(this.handleError);
     };
+    HeroService.prototype.search = function (term) {
+        var url = this.heroesUrl + "/?name=" + term;
+        return this.http
+            .get(url)
+            .map(function (r) { return r.json().data; });
+    };
     HeroService.prototype.handleError = function (error) {
         console.error('An error occurred in HeroService : ', error); // for demo purposes only
         return Promise.reject(error.message || error);

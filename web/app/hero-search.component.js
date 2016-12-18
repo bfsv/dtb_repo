@@ -12,10 +12,10 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var Observable_1 = require('rxjs/Observable');
 var Subject_1 = require('rxjs/Subject');
-var hero_search_service_1 = require('./hero-search.service');
+var hero_service_1 = require('./hero.service');
 var HeroSearchComponent = (function () {
-    function HeroSearchComponent(heroSearchService, router) {
-        this.heroSearchService = heroSearchService;
+    function HeroSearchComponent(heroService, router) {
+        this.heroService = heroService;
         this.router = router;
         this.searchTerms = new Subject_1.Subject();
     }
@@ -29,7 +29,7 @@ var HeroSearchComponent = (function () {
             .debounceTime(300) // wait for 300ms pause in events
             .distinctUntilChanged() // ignore if next search term is same as previous
             .switchMap(function (term) { return term // switch to new observable each time
-            ? _this.heroSearchService.search(term)
+            ? _this.heroService.search(term)
             : Observable_1.Observable.of([]); })
             .catch(function (error) {
             // TODO: real error handling
@@ -47,9 +47,9 @@ var HeroSearchComponent = (function () {
             selector: 'hero-search',
             templateUrl: 'hero-search.component.html',
             styleUrls: ['hero-search.component.css'],
-            providers: [hero_search_service_1.HeroSearchService]
+            providers: [hero_service_1.HeroService]
         }), 
-        __metadata('design:paramtypes', [hero_search_service_1.HeroSearchService, router_1.Router])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
     ], HeroSearchComponent);
     return HeroSearchComponent;
 }());

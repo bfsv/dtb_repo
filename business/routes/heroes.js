@@ -10,7 +10,6 @@ router.get('/heroes', cors(), function (req, res, next) {
             res.send(err);
         } else {
             res.json(heroes);
-	    //res.send('{"_id":1,"name":"test"}');
         }
     });
 });
@@ -30,8 +29,9 @@ router.get('/heroes/:id', cors(), function (req, res, next) {
 /* POST/SAVE a Todo */
 router.post('/heroes',  cors(), function (req, res, next) {
     var hero = req.body;
-    console.log("Hero to save :" + hero.text);
-    if (!hero.text || !(hero.isCompleted + '')) {
+    console.log("Hero to save :" + hero.name);
+    console.log("Hero to save :" + JSON.stringify(hero));
+    if (!hero.name || !(hero.isCompleted + '')) {
         res.status(400);
         res.json({
             "error": "Invalid Data"
@@ -53,8 +53,8 @@ router.put('/heroes/:id', cors(), function (req, res, next) {
     if (hero.isCompleted) {
         updObj.isCompleted = hero.isCompleted;
     }
-    if (hero.text) {
-        updObj.text = hero.text;
+    if (hero.name) {
+        updObj.name = hero.name;
     }
     if (!updObj) {
         res.status(400);

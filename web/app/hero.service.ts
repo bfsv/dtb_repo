@@ -49,6 +49,12 @@ export class HeroService {
 			.then(() => hero)
 			.catch(this.handleError);
 	}
+	search(term: string): Observable<Hero[]> {
+		const url = `${this.heroesUrl}/?name=${term}`;
+		return this.http
+			.get(url)
+			.map((r: Response) => r.json().data as Hero[]);
+	}
 	private handleError(error: any): Promise<any> {
 		console.error('An error occurred in HeroService : ', error); // for demo purposes only
 		return Promise.reject(error.message || error);
