@@ -53,7 +53,7 @@ var HeroService = (function () {
             .catch(this.handleError);
     };
     HeroService.prototype.search = function (term) {
-        var url = this.heroesUrl + "/?name=" + term;
+        var url = this.heroesUrl + "/search/" + term;
         return this.http
             .get(url)
             .map(function (r) { return r.json().data; });

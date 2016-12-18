@@ -50,7 +50,7 @@ export class HeroService {
 			.catch(this.handleError);
 	}
 	search(term: string): Observable<Hero[]> {
-		const url = `${this.heroesUrl}/?name=${term}`;
+		const url = `${this.heroesUrl}/search/${term}`;
 		return this.http
 			.get(url)
 			.map((r: Response) => r.json().data as Hero[]);
