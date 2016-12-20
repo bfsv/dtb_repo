@@ -17,10 +17,12 @@ export class HeroSearchComponent implements OnInit {
     constructor(
         private heroService: HeroService,
         private router: Router) { }
+
     // Push a search term into the observable stream.
     search(term: string): void {
         this.searchTerms.next(term);
     }
+
     ngOnInit(): void {
         this.heroes = this.searchTerms
             .debounceTime(300)        // wait for 300ms pause in events
@@ -36,6 +38,7 @@ export class HeroSearchComponent implements OnInit {
                 return Observable.of<Hero[]>([]);
             });
     }
+    
     gotoDetail(hero: Hero): void {
         let link = ['/detail', hero._id];
         this.router.navigate(link);
