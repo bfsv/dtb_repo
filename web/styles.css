@@ -21,3 +21,11 @@ body, input[text], button {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+.center{
+  width : 85%;
+  margin : 0 auto;
+}
+#content{
+  display : block;
+  margin-top: 60px;
+}

@@ -1,13 +1,16 @@
-<h1>{{title}}</h1>
-
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
     <div class="container">
-        <a class="navbar-brand">Angular Router</a>
         <ul class="nav navbar-nav" routerLinkActive="active">
+            <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/produits" routerLinkActive="active">Produits</a></li>
             <li class="nav-item"><a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
         </ul>
     </div>
 </nav>
 
-<router-outlet></router-outlet>
+<div id="content">
+    <div class="center">
+        <router-outlet></router-outlet>
+    </div>
+</div>
