@@ -1,0 +1,43 @@
+.carousel{
+    overflow:hidden;
+    width:100%;
+}
+.slides{
+    list-style:none;
+    position:relative;
+    width:300%; /* Number of panes * 100% */
+    overflow:hidden; /* Clear floats */
+        /* Slide effect Animations*/
+    -moz-animation:carousel 4s infinite;
+    -webkit-animation:carousel 4s infinite;
+    animation:carousel 4s infinite;
+}
+.slides > li{
+    position:relative;
+    float:left;
+    width: 33%; /* 100 / number of panes */
+}
+.carousel img{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+.carousel h2{
+    margin-bottom: 0;
+    font-size:1em;
+    padding:1.5em 0.5em 1.5em 0.5em;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    text-align:center;
+    color:#fff;
+    background-color:rgba(0,0,0,0.75);
+    text-transform: uppercase;
+}
+
+@keyframes carousel{
+    0%    { left:0%; }
+    50%   { left:-100%; }
+    100%  { left:-200%; }
+}

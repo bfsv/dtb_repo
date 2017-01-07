@@ -11,6 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var HomeComponent = (function () {
     function HomeComponent() {
+        this.images = [
+            { "title": "Los Angeles", "url": "/w3images/la.jpg" },
+            { "title": "New York", "url": "/w3images/ny.jpg" },
+            { "title": "Chicago", "url": "/w3images/chicago.jpg" }
+        ];
     }
     HomeComponent.prototype.ngOnInit = function () {
     };

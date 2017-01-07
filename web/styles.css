@@ -1,4 +1,11 @@
-@font-face {
-    font-family: 'dtbfont'; /*a name to be used later*/
-    src: url('AlexBrush-Regular.ttf'); /*URL to font*/
+body {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+}
+
+.mySlides {
+    display: none
+}
+h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide {
+    font-family: 'Indie Flower', cursive;
 }

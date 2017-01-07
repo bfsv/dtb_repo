@@ -1,3 +1,13 @@
+<div class="w3-container w3-content w3-center w3-padding-24" style="max-width:800px" id="band">
+  <ul class="slides">
+    <li *ngFor="let image of images">
+      <h2>{{image.title}}</h2>
+      <img src="{{image.url}}" alt="">
+    </li>
+  </ul>
+</div>
+
+
 <!-- Automatic Slideshow Images -->
 <div class="mySlides w3-display-container w3-center">
   <img src="/w3images/la.jpg" style="width:100%">
@@ -22,15 +32,14 @@
 </div>
 
 <!-- The Band Section -->
-<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-  <h2 class="w3-wide">THE BAND</h2>
-  <p class="w3-opacity"><i>We love music</i></p>
-  <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-    laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div class="w3-container w3-content w3-center w3-padding-24" style="max-width:800px" id="band">
+  <h2 class="w3-wide">Dans ton bocal...</h2>
+  <p class="w3-opacity"><i>Epicerie vrac <span style="font-size:28px;">0</span> déchet</i></p>
+  <p class="w3-justify">Epicerie 100% vrac proposant les produits du quotidien (pâtes, riz, légumes secs, apéritifs, fruits secs, confiserie, épices,
+    thé, café, huiles, vinaigres, droguerie, hygiène etc.) en quantité à la demande et sans emballage inutile. Produits bio
+    et / ou locaux</p>
+  <p class="w3-justify">Comment ? Rien n’est pré-emballé: le client se sert en fonction de la quantité dont il a besoin, soit en apportant ses
+    propres contenants, soit en optant pour des contenants réutilisables disponibles dans le magasin. </p>
   <div class="w3-row w3-padding-32">
     <div class="w3-third">
       <p>Name</p>
@@ -110,29 +119,38 @@
   </div>
 </div>
 
-<!-- The Contact Section -->
-<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-  <h2 class="w3-wide w3-center">CONTACT</h2>
-  <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
-  <div class="w3-row w3-padding-32">
-    <div class="w3-col m6 w3-large w3-margin-bottom">
-      <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
-      <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-      <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
-    </div>
-    <div class="w3-col m6">
-      <form action="form.asp" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-btn w3-section w3-right" type="submit">SEND</button>
-      </form>
-    </div>
-  </div>
-</div>
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
