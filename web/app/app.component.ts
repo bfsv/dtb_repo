@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 declare var google: any;
 
@@ -10,6 +10,8 @@ declare var google: any;
 })
 export class AppComponent implements AfterViewInit {
   title = 'Tour of Heroes';
+
+  @ViewChild('navDemo') navDemo: ElementRef;
 
   ngAfterViewInit() {
     var myCenter = new google.maps.LatLng(50.5667, 2.85);
@@ -26,4 +28,14 @@ export class AppComponent implements AfterViewInit {
     });
     marker.setMap(map);
   }
+
+  // Used to toggle the menu on small screens when clicking on the menu button
+  toggleMenu(): void {
+    if (this.navDemo.nativeElement.className.indexOf("w3-show") == -1) {
+      this.navDemo.nativeElement.className += " w3-show";
+    } else {
+      this.navDemo.nativeElement.className = this.navDemo.nativeElement.className.replace(" w3-show", "");
+    }
+  }
+
 }

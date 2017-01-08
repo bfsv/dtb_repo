@@ -28,6 +28,19 @@ var AppComponent = (function () {
         });
         marker.setMap(map);
     };
+    // Used to toggle the menu on small screens when clicking on the menu button
+    AppComponent.prototype.toggleMenu = function () {
+        if (this.navDemo.nativeElement.className.indexOf("w3-show") == -1) {
+            this.navDemo.nativeElement.className += " w3-show";
+        }
+        else {
+            this.navDemo.nativeElement.className = this.navDemo.nativeElement.className.replace(" w3-show", "");
+        }
+    };
+    __decorate([
+        core_1.ViewChild('navDemo'), 
+        __metadata('design:type', core_1.ElementRef)
+    ], AppComponent.prototype, "navDemo", void 0);
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
