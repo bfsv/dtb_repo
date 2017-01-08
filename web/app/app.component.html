@@ -30,12 +30,7 @@
     </ul>
 </div>
 
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-    <div class="w3-container w3-content w3-center w3-padding-24" style="max-width:800px" id="logo">
-        <img src="w3images/Logo.png" class="w3-round" alt="Random Name" style="width:40%">
-    </div>
-    <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
 
 <!-- Add Google Maps -->
 <div id="googleMap" style="height:400px;filter:grayscale(90%);-webkit-filter:grayscale(90%);"></div>
@@ -78,11 +73,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <!--<form action="form.asp" target="_blank">-->
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                 <i class="fa fa-clock-o fa-fw"></i> Horaires : <br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;margin-right:7px;"></i> Lundi : 9h-12h / 13h-18h30<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mardi : 9h-12h / 13h-18h30<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mercredi : 9h-13h<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Jeudi : 9h-12h / 13h-18h30<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Vendredi : 9h-19h<br>
+                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;margin-right:7px;"></i> Lundi : 9h-12h
+                / 13h-18h30<br>
+                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mardi : 9h-12h
+                / 13h-18h30<br>
+                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mercredi :
+                9h-13h<br>
+                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Jeudi : 9h-12h
+                / 13h-18h30<br>
+                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Vendredi :
+                9h-19h<br>
                 <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Samedi : 9h-14h<br>
             </div>
 
