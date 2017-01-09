@@ -2,11 +2,12 @@
 <div class="w3-top">
     <ul class="w3-navbar w3-black w3-card-2 w3-left-align">
         <li class="w3-hide-medium w3-hide-large w3-opennav">
-            <a href="javascript:void(0)" (click)="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <img src="images/Logo_Tres_Long.png" style="margin-right : 15px;"  width="224px" height="48px" alt="Epicerie vrac zéro déchet" title="Epicerie vrac zéro déchet">
+            <a href="javascript:void(0)" (click)="toggleMenu()" style="display:inline;" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <img src="images/Logo_Tres_Long.png" style="padding-left:5px;" width="224px" height="48px" alt="Epicerie vrac zéro déchet"
+                title="Epicerie vrac zéro déchet">
         </li>
         <li class="w3-hide-small"><a routerLink="/home" routerLinkActive="active" class="w3-hover-none w3-hover-text-grey w3-padding-large"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a></li>
-        <li class="w3-hide-small"><a routerLink="/produits" routerLinkActive="active" class="w3-padding-large">Produits</a></li>
+        <li class="w3-hide-small"><a routerLink="/products" routerLinkActive="active" class="w3-padding-large">Produits</a></li>
         <li class="w3-hide-small"><a routerLink="/dashboard" routerLinkActive="active" class="w3-padding-large">Dashboard</a></li>
         <li class="w3-hide-small"><a routerLink="/heroes" routerLinkActive="active" class="w3-padding-large">Heroes</a></li>
         <li class="w3-hide-small w3-dropdown-hover">
@@ -17,17 +18,18 @@
                 <a href="#">Media</a>
             </div>
         </li>
-        <li class="w3-hide-small w3-right"><img src="images/Logo_Tres_Long.png" style="margin-right : 15px;"  width="224px" height="48px" alt="Epicerie vrac zéro déchet" title="Epicerie vrac zéro déchet"></li>
+        <li class="w3-hide-small w3-right"><img src="images/Logo_Tres_Long.png" style="margin-right : 15px;" width="224px" height="48px" alt="Epicerie vrac zéro déchet"
+                title="Epicerie vrac zéro déchet"></li>
     </ul>
 </div>
 
 <!-- Navbar on small screens -->
-<div #navDemo class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+<div #navDemo class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:55px">
     <ul class="w3-navbar w3-left-align w3-black">
-        <li><a class="w3-padding-large" routerLink="/home" routerLinkActive="active"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a></li>
-        <li><a class="w3-padding-large" routerLink="/produits" routerLinkActive="active">Produits</a></li>
-        <li><a class="w3-padding-large" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-        <li><a class="w3-padding-large" routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
+        <li><a class="w3-padding-large" (click)="toggleMenu()" routerLink="/home" routerLinkActive="active">Accueil</a></li>
+        <li><a class="w3-padding-large" (click)="toggleMenu()" routerLink="/products" routerLinkActive="active">Produits</a></li>
+        <li><a class="w3-padding-large" (click)="toggleMenu()" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+        <li><a class="w3-padding-large" (click)="toggleMenu()" routerLink="/heroes" routerLinkActive="active">Heroes</a></li>
     </ul>
 </div>
 

@@ -14,6 +14,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 import { HeroSearchComponent } from './hero-search.component';
 import { HomeComponent } from './home.component';
+import { ProductsComponent } from './products.component';
 import { Configuration } from './app.constants'
 
 @NgModule({
@@ -30,7 +31,8 @@ import { Configuration } from './app.constants'
     HeroDetailComponent,
     HeroesComponent,
     HeroSearchComponent,
-    HomeComponent
+    HomeComponent,
+    ProductsComponent
   ],
   providers: [HeroService, Configuration],
   bootstrap: [AppComponent]

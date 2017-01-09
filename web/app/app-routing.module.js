@@ -14,9 +14,11 @@ var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var home_component_1 = require('./home.component');
+var products_component_1 = require('./products.component');
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
+    { path: 'products', component: products_component_1.ProductsComponent },
     { path: 'detail/:id', component: hero_detail_component_1.HeroDetailComponent },
     { path: 'home', component: home_component_1.HomeComponent },
     { path: 'heroes', component: heroes_component_1.HeroesComponent }
