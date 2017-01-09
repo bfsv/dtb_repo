@@ -1,9 +1,11 @@
 <!-- Sidenav -->
-<nav class="w3-sidenav w3-collapse w3-theme-l5 w3-animate-left" style="z-index:3;width:200px;margin-top:60px;padding-left:10px;" id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="close menu">
+<nav class="w3-sidenav w3-collapse w3-theme-l5 w3-animate-left" style="z-index:3;width:200px;margin-top:60px;padding-left:20px;"
+  id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large"
+    title="close menu">
     <i class="fa fa-remove"></i>
   </a>
-  <h4><b>Menu</b></h4>
+  <h4><b>Produits</b></h4>
   <a href="#" class="w3-hover-black">Link</a>
   <a href="#" class="w3-hover-black">Link</a>
   <a href="#" class="w3-hover-black">Link</a>
@@ -14,65 +16,126 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidenav is visible -->
-<div class="w3-main" style="margin-left:200px">
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
+<div class="w3-main w3-padding-64" style="margin-left:200px;font-size:16px;">
 
   <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-threequarter w3-container">
+      <h3 class="w3-text-teal">Farine de blé complète type 110</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-64">
-    <ul class="w3-pagination">
-      <li><a class="w3-black" href="#">1</a></li>
-      <li><a class="w3-hover-black" href="#">2</a></li>
-      <li><a class="w3-hover-black" href="#">3</a></li>
-      <li><a class="w3-hover-black w3-hide-small" href="#">4</a></li>
-      <li><a class="w3-hover-black w3-hide-small" href="#">5</a></li>
-      <li><a class="w3-hover-black" href="#">»</a></li>
-    </ul>
-  </div>
-
-  <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>Footer</h4>
+    <div class="w3-quarter w3-container w3-padding-32">
+      <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur local</p>
+      <div class="w3-progress-container w3-round">
+        <div id="myBar" class="w3-progressbar w3-lime w3-round" style="width:50%">
+          <div class="w3-center w3-text-white">
+            < 50 KM</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </div>
-  </footer>
+    <div class="w3-row">
+      <div class="w3-threequarter w3-container">
+        <h3 class="w3-text-teal">Farine de blé complète type 110</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+      <div class="w3-quarter w3-container w3-padding-32">
+        <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur local</p>
+        <div class="w3-progress-container w3-round">
+          <div id="myBar" class="w3-progressbar w3-green w3-round" style="width:30%">
+            <div class="w3-center w3-text-white">
+              < 30 KM</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!-- END MAIN -->
-</div>
+      <div class="w3-row">
+        <div class="w3-threequarter w3-container">
+          <h3 class="w3-text-teal">Farine de blé complète type 110</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+        <div class="w3-quarter w3-container w3-padding-32">
+          <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur Français</p>
+          <div class="w3-progress-container w3-round">
+            <div id="myBar" class="w3-progressbar w3-red w3-round" style="width:100%">
+              <div class="w3-center w3-text-white">
+                > 100 KM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row">
+        <div class="w3-threequarter w3-container">
+          <h3 class="w3-text-teal">Farine de blé complète type 110</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+        <div class="w3-quarter w3-container w3-padding-32">
+          <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur Régional</p>
+          <div class="w3-progress-container w3-round">
+            <div id="myBar" class="w3-progressbar w3-orange w3-round" style="width:75%">
+              <div class="w3-center w3-text-white">
+                < 75 KM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="w3-center w3-padding-32">
+          <ul class="w3-pagination">
+            <li><a class="w3-black" href="#">1</a></li>
+            <li><a class="w3-hover-black" href="#">2</a></li>
+            <li><a class="w3-hover-black" href="#">3</a></li>
+            <li><a class="w3-hover-black w3-hide-small" href="#">4</a></li>
+            <li><a class="w3-hover-black w3-hide-small" href="#">5</a></li>
+            <li><a class="w3-hover-black" href="#">»</a></li>
+          </ul>
+        </div>
+
+        <!-- END MAIN -->
+      </div>
+
+      <script>
+// Get the Sidenav
+var mySidenav = document.getElementById("mySidenav");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidenav, and add overlay effect
+function w3_open() {
+    if (mySidenav.style.display === 'block') {
+        mySidenav.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidenav.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidenav with the close button
+function w3_close() {
+    mySidenav.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
