@@ -1,25 +1,46 @@
-div#slider { width: 100%; overflow: hidden;margin-top:50px;}
-
-div#slider figure {
+.priceTag{
+  width:90px; 
   position: relative;
-  width: 400%;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  left: 0;
-  text-align: left;
-  animation: 15s slidy infinite;
+  transform: rotate(-10deg);
+  display: inline;
+  float: right;
+  margin-right: 70px;
 }
 
-div#slider figure img { width: 25%; height: auto; float: left;}
+.tag-triangle {
+		border-color:transparent #4AA02C transparent transparent;
+		border-style:solid;
+		border-width:15px;
+		width:0;
+		height:0;
+		float:left;
+	}
 
-@keyframes slidy {
-  0% { left: 0%; }
-  20% { left: 0%; }
-  25% { left: -100%; }
-  45% { left: -100%; }
-  50% { left: -200%; }
-  75% { left: -200%; }
-  80% { left: -300%; }
-  100% { left: -300%; }
-}
+.tag-rectangle {
+		background-color:#4AA02C;
+		width:60px;
+		height:30px;
+    -webkit-border-radius: 0px 4px 4px 0px;
+		-moz-border-radius: 0px 4px 4px 0px;
+		border-radius: 0px 4px 4px 0px;
+		float:right;
+	}
+	
+.hole {
+		width: 5px;
+		height: 5px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		background-color:#E7E9EB;
+		position: absolute;
+		left: 22px;
+		top: 12px;
+	}
+	
+.tag-rectangle h1 {
+		text-align: center;
+		font-size: 14px;
+		color: #FFF8C6;
+    line-height: 14px;
+	}
