@@ -18,18 +18,18 @@
 <!-- Main content: shift it to the right by 250 pixels when the sidenav is visible -->
 <div class="w3-main w3-padding-64" style="margin-left:200px;font-size:16px;">
 
-  <div class="w3-row">
+  <div *ngFor="let product of products" class="w3-row">
     <div class="w3-threequarter w3-container">
-      <h3 class="w3-text-teal w3-padding-8" style="display:inline;">Farine de blé complète type 110</h3>
+      <h3 class="w3-text-teal w3-padding-8" style="display:inline;">{{product.nom}}</h3>
       <span class="w3-tag w3-large w3-orange" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-tag" aria-hidden="true"></i>
-           1<span class="w3-small">,50€ / Kg </span>
+           {{product.prix}}€ / {{product.volume_ref}} {{product.unite_ref}}
       </span>
-      <span class="w3-tag w3-large w3-teal" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
+      <span *ngIf="product.local" class="w3-tag w3-large w3-teal" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-truck" aria-hidden="true"></i>
            Local
       </span>
-      <span class="w3-tag w3-large w3-green" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
+      <span *ngIf="product.bio" class="w3-tag w3-large w3-green" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-heart-o" aria-hidden="true"></i>
            Bio
       </span>
@@ -50,101 +50,22 @@
       </div>
     </div>
 
-    <div class="w3-row">
-      <div class="w3-threequarter w3-container">
-        <h3 class="w3-text-teal w3-padding-8" style="display:inline;">Farine de blé complète type 110</h3>
-        <span class="w3-tag w3-large w3-orange" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
-          <i class="fa fa-tag" aria-hidden="true"></i>
-           1<span class="w3-small">,50€ / Kg </span>
-        </span>
-        <span class="w3-tag w3-large w3-green" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
-          <i class="fa fa-heart-o" aria-hidden="true"></i>
-           Bio
-      </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </p>
-      </div>
-      <div class="w3-quarter w3-container w3-padding-32">
-        <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur local</p>
-        <div class="w3-progress-container w3-round">
-          <div id="myBar" class="w3-progressbar w3-green w3-round" style="width:30%">
-            <div class="w3-center w3-text-white">
-              < 30 KM</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-32">
+      <ul class="w3-pagination">
+        <li><a class="w3-black" href="#">1</a></li>
+        <li><a class="w3-hover-black" href="#">2</a></li>
+        <li><a class="w3-hover-black" href="#">3</a></li>
+        <li><a class="w3-hover-black w3-hide-small" href="#">4</a></li>
+        <li><a class="w3-hover-black w3-hide-small" href="#">5</a></li>
+        <li><a class="w3-hover-black" href="#">»</a></li>
+      </ul>
+    </div>
 
-      <div class="w3-row">
-        <div class="w3-threequarter w3-container">
-          <h3 class="w3-text-teal w3-padding-8" style="display:inline;">Farine de blé complète type 110</h3>
-          <span class="w3-tag w3-large w3-orange" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
-          <i class="fa fa-tag" aria-hidden="true"></i>
-           1<span class="w3-small">,50€ / Kg </span>
-          </span>
-          <span class="w3-tag w3-large w3-teal" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
-          <i class="fa fa-truck" aria-hidden="true"></i>
-           Local
-      </span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </p>
-        </div>
-        <div class="w3-quarter w3-container w3-padding-32">
-          <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur Français</p>
-          <div class="w3-progress-container w3-round">
-            <div id="myBar" class="w3-progressbar w3-red w3-round" style="width:100%">
-              <div class="w3-center w3-text-white">
-                > 100 KM</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- END MAIN -->
+  </div>
 
-      <div class="w3-row">
-        <div class="w3-threequarter w3-container">
-          <h3 class="w3-text-teal">Farine de blé complète type 110</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </p>
-        </div>
-        <div class="w3-quarter w3-container w3-padding-32">
-          <p class="w3-border w3-padding-large w3-padding-12 w3-center w3-round-xlarge">Producteur Régional</p>
-          <div class="w3-progress-container w3-round">
-            <div id="myBar" class="w3-progressbar w3-orange w3-round" style="width:75%">
-              <div class="w3-center w3-text-white">
-                < 75 KM</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="w3-center w3-padding-32">
-          <ul class="w3-pagination">
-            <li><a class="w3-black" href="#">1</a></li>
-            <li><a class="w3-hover-black" href="#">2</a></li>
-            <li><a class="w3-hover-black" href="#">3</a></li>
-            <li><a class="w3-hover-black w3-hide-small" href="#">4</a></li>
-            <li><a class="w3-hover-black w3-hide-small" href="#">5</a></li>
-            <li><a class="w3-hover-black" href="#">»</a></li>
-          </ul>
-        </div>
-
-        <!-- END MAIN -->
-      </div>
-
-      <script>
+  <script>
 // Get the Sidenav
 var mySidenav = document.getElementById("mySidenav");
 

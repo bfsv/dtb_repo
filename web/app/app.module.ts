@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
+import { ProductService } from './product.service';
 import { HeroSearchComponent } from './hero-search.component';
 import { HomeComponent } from './home.component';
 import { ProductsComponent } from './products.component';
@@ -34,7 +35,7 @@ import { Configuration } from './app.constants'
     HomeComponent,
     ProductsComponent
   ],
-  providers: [HeroService, Configuration],
+  providers: [HeroService, ProductService, Configuration],
   bootstrap: [AppComponent]
 })
 

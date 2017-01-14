@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Image } from './image';
+import { Router } from '@angular/router';
+import { Product } from './product';
+import { ProductService } from './product.service';
 
 @Component({
   moduleId: module.id,
@@ -17,9 +20,20 @@ export class ProductsComponent implements OnInit {
     { "title": "Maison", "url": "/images/maison.jpg" }
   ];
 
-  constructor() { }
+  products: Product[];
+  constructor(
+    private productService: ProductService,
+    private router: Router) { }
+  getProducts(): void {
+    this.productService
+      .getProducts()
+      .subscribe((data: Product[]) => this.products = data,
+      error => console.log(error),
+      () => console.log('Get all Products complete'));
+  }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
 }

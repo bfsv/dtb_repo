@@ -22,6 +22,7 @@ var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
+var product_service_1 = require('./product.service');
 var hero_search_component_1 = require('./hero-search.component');
 var home_component_1 = require('./home.component');
 var products_component_1 = require('./products.component');
@@ -47,7 +48,7 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 products_component_1.ProductsComponent
             ],
-            providers: [hero_service_1.HeroService, app_constants_1.Configuration],
+            providers: [hero_service_1.HeroService, product_service_1.ProductService, app_constants_1.Configuration],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

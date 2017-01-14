@@ -9,8 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var product_service_1 = require('./product.service');
 var ProductsComponent = (function () {
-    function ProductsComponent() {
+    function ProductsComponent(productService, router) {
+        this.productService = productService;
+        this.router = router;
         this.images = [
             { "title": "Dans ton bocal", "url": "/images/Logo_Long.png" },
             { "title": "3 bocaux", "url": "/images/bocaux1.png" },
@@ -18,7 +22,14 @@ var ProductsComponent = (function () {
             { "title": "Maison", "url": "/images/maison.jpg" }
         ];
     }
+    ProductsComponent.prototype.getProducts = function () {
+        var _this = this;
+        this.productService
+            .getProducts()
+            .subscribe(function (data) { return _this.products = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all Products complete'); });
+    };
     ProductsComponent.prototype.ngOnInit = function () {
+        this.getProducts();
     };
     ProductsComponent = __decorate([
         core_1.Component({
@@ -27,7 +38,7 @@ var ProductsComponent = (function () {
             templateUrl: 'products.component.html',
             styleUrls: ['products.component.css'],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [product_service_1.ProductService, router_1.Router])
     ], ProductsComponent);
     return ProductsComponent;
 }());
