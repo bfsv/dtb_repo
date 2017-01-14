@@ -23,7 +23,7 @@
       <h3 class="w3-text-teal w3-padding-8" style="display:inline;">{{product.nom}}</h3>
       <span class="w3-tag w3-large w3-orange" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-tag" aria-hidden="true"></i>
-           {{product.prix}}€ / {{product.volume_ref}} {{product.unite_ref}}
+           {{product.prix}}€ <span class="w3-small">/ {{product.volume_ref}} {{product.unite_ref}}</span>
       </span>
       <span *ngIf="product.local" class="w3-tag w3-large w3-teal" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-truck" aria-hidden="true"></i>
