@@ -25,7 +25,7 @@
     <div class="w3-col s10" style="padding:16px 16px 32px 16px;">
       <div class="w3-row" style="padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid grey;">
         <span class="w3-opacity"><b>Filtres : </b></span>
-        <span *ngFor="let category of categories" class="w3-border w3-center w3-round-large" style="padding:3px 6px 3px 6px;margin-left:8px;">{{category}}</span>
+        <span *ngFor="let category of categories" class="w3-border w3-center w3-round-large w3-hover-black" style="padding:3px 6px 3px 6px;margin-left:8px;">{{category}}</span>
       </div>
       <div *ngFor="let product of products" class="w3-row">
         <h3 class="w3-text-teal w3-padding-8" style="display:inline;">{{product.nom}}</h3>
