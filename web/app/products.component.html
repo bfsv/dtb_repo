@@ -1,90 +1,49 @@
-<!-- Sidenav -->
-<!--
-<nav class="w3-sidenav w3-collapse w3-theme-l5 w3-animate-left" style="z-index:3;width:200px;margin-top:64px;padding-left:20px;"
-  id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large"
-    title="close menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4><b>Produits</b></h4>
-  <a href="#" class="w3-hover-black">Epicerie sèche</a>
-  <a href="#" class="w3-hover-black">Epicerie Liquide</a>
-  <a href="#" class="w3-hover-black">Cosmétique</a>
-  <a href="#" class="w3-hover-black">Entretien</a>
-</nav>-->
-
-<!-- Overlay effect when opening sidenav on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
 <!-- Main content: shift it to the right by 250 pixels when the sidenav is visible -->
-<div class="w3-main w3-padding-64" style="margin-left:200px;font-size:16px;">
+<div class="w3-main w3-padding-64" style="font-size:16px;">
 
-  <div *ngFor="let product of products" class="w3-row">
-    <div class="w3-threequarter w3-container">
-      <h3 class="w3-text-teal w3-padding-8" style="display:inline;">{{product.nom}}</h3>
-      <span class="w3-tag w3-large w3-orange" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
+  <div class="w3-row">
+
+    <div class="w3-col s2" style="padding:16px;border-right-style:1px solid grey;">
+      <div class="w3-row w3-center w3-tooltip">
+        <img src="/images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+        <p class="w3-text w3-tag w3-round-xlarge">Epicerie Sèche</p>
+      </div>
+      <div class="w3-row w3-center w3-tooltip">
+        <img src="/images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+        <p class="w3-text w3-tag w3-round-xlarge">Epicerie Liquide</p>
+      </div>
+      <div class="w3-row w3-center w3-tooltip">
+        <img src="/images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+        <p class="w3-text w3-tag w3-round-xlarge">Cosmétique</p>
+      </div>
+      <div class="w3-row w3-center w3-tooltip">
+        <img src="/images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+        <p class="w3-text w3-tag w3-round-xlarge">Entretien</p>
+      </div>
+    </div>
+
+    <div class="w3-col s10" style="padding:16px 16px 32px 16px;">
+      <div class="w3-row" style="padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid grey;">
+        <span class="w3-opacity"><b>Filtres : </b></span>
+        <span *ngFor="let category of categories" class="w3-border w3-center w3-round-large" style="padding:3px 6px 3px 6px;margin-left:8px;">{{category}}</span>
+      </div>
+      <div *ngFor="let product of products" class="w3-row">
+        <h3 class="w3-text-teal w3-padding-8" style="display:inline;">{{product.nom}}</h3>
+        <span class="w3-tag w3-large w3-orange" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-tag" aria-hidden="true"></i>
            {{product.prix | currency:'EUR':true}} <span class="w3-small">/ {{product.volume_ref}} {{product.unite_ref}}</span>
-      </span>
-      <span *ngIf="product.local" class="w3-tag w3-large w3-teal" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
+        </span>
+        <span *ngIf="product.local" class="w3-tag w3-large w3-teal" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-truck" aria-hidden="true"></i>
            Local
-      </span>
-      <span *ngIf="product.bio" class="w3-tag w3-large w3-green" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
+          </span>
+        <span *ngIf="product.bio" class="w3-tag w3-large w3-green" style="transform:rotate(-10deg);margin-left:15px;padding-top: 5px;">
           <i class="fa fa-heart-o" aria-hidden="true"></i>
            Bio
-      </span>
-      <p>{{product.description}}</p>
-    </div>
-    <div class="w3-quarter w3-container w3-padding-32">
-      <p class="w3-border w3-center w3-round-large">Epicerie sèche</p>
-      <p class="w3-border w3-center w3-round-large">1,50€ pour 100g</p>
-      <!--
-      <div class="w3-progress-container w3-round">
-        <div id="myBar" class="w3-progressbar w3-lime w3-round-large" style="width:50%">
-          <div class="w3-center w3-text-white">
-            < 50 KM</div>
-          </div>
-        </div>-->
+          </span>
+        <p>{{product.description}}</p>
+      </div>
     </div>
   </div>
 
-  <!-- Pagination -->
-  <!--<div class="w3-center w3-padding-32">
-    <ul class="w3-pagination">
-      <li><a class="w3-black" href="#">1</a></li>
-      <li><a class="w3-hover-black" href="#">2</a></li>
-      <li><a class="w3-hover-black" href="#">3</a></li>
-      <li><a class="w3-hover-black w3-hide-small" href="#">4</a></li>
-      <li><a class="w3-hover-black w3-hide-small" href="#">5</a></li>
-      <li><a class="w3-hover-black" href="#">»</a></li>
-    </ul>
-  </div>-->
-
-  <!-- END MAIN -->
 </div>
-
-<script>
-// Get the Sidenav
-var mySidenav = document.getElementById("mySidenav");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidenav, and add overlay effect
-function w3_open() {
-    if (mySidenav.style.display === 'block') {
-        mySidenav.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidenav.style.display = 'block';
-        overlayBg.style.display = "block";
-    }
-}
-
-// Close the sidenav with the close button
-function w3_close() {
-    mySidenav.style.display = "none";
-    overlayBg.style.display = "none";
-}
-</script>
