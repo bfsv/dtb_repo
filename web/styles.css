@@ -10,3 +10,15 @@ body {
 h1, h2, h3, h4, h5, h6, .w3-slim, .w3-wide {
     font-family: 'Indie Flower', cursive;
 }
+
+.pGrey{
+    background-color:#5C5050;
+}
+
+.pBlue{
+    background-color:#2B7E82;
+}
+
+.pPink{
+    background-color:#D37F75;
+}
