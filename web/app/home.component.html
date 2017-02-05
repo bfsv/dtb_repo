@@ -4,7 +4,6 @@
   </figure>
 </div>
 
-<!-- The Band Section -->
 <div class="w3-container w3-content w3-center w3-padding-24" style="max-width:800px" id="band">
   <h2 class="w3-wide">Dans ton bocal...</h2>
   <p class="w3-opacity"><i>Epicerie vrac <span style="font-size:28px;">0</span> déchet</i></p>
@@ -29,99 +28,53 @@
   </div>
 </div>
 
-<!-- The Tour Section -->
-<div class="w3-black" id="produits">
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-    <h2 class="w3-wide w3-center">Ateliers & Produits</h2>
-    <p class="w3-opacity w3-center"><i>Appelez pour réserver votre atelier !</i></p><br>
+<div style="width:100%;padding-bottom:32px;;background-color:#5C5050;">
+  <img src="/images/Pourquoi.png" width="100%">
+</div>
 
+<div style="width:100%;padding-top:32px;background-color:#2B7E82;">
+  <img src="/images/Principe3.png" width="100%">
+</div>
+
+<div id="produits">
+  <div class="w3-container w3-content w3-padding-32" style="max-width:800px">
+    <h2 class="w3-wide w3-center">Ateliers</h2>
+    <p class="w3-opacity w3-center"><i>Appelez pour réserver votre atelier !</i></p><br>
     <ul class="w3-ul w3-border w3-white w3-text-grey">
       <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
       <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
       <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
     </ul>
-
-    <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-      <div class="w3-third w3-margin-bottom">
-        <img src="/images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Alimentaire</b></p>
-          <p class="w3-opacity">Fri 27 Nov 2016</p>
-          <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          <button class="w3-btn w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-        </div>
-      </div>
-      <div class="w3-third w3-margin-bottom">
-        <img src="/images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Entretien</b></p>
-          <p class="w3-opacity">Sat 28 Nov 2016</p>
-          <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          <button class="w3-btn w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-        </div>
-      </div>
-      <div class="w3-third w3-margin-bottom">
-        <img src="/images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Cosmétique & Hygiène</b></p>
-          <p class="w3-opacity">Sun 29 Nov 2016</p>
-          <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          <button class="w3-btn w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Ticket Modal -->
-<div id="ticketModal" class="w3-modal">
-  <div class="w3-modal-content w3-animate-top w3-card-8">
-    <header class="w3-container w3-teal w3-center w3-padding-32">
-      <span onclick="document.getElementById('ticketModal').style.display='none'" class="w3-closebtn w3-padding-xlarge w3-xxlarge w3-display-topright">×</span>
-      <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-    </header>
-    <div class="w3-container">
-      <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-      <input class="w3-input w3-border" type="text" placeholder="How many?">
-      <p><label><i class="fa fa-user"></i> Send To</label></p>
-      <input class="w3-input w3-border" type="text" placeholder="Enter email">
-      <button class="w3-btn-block w3-teal w3-padding-12 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
-      <button class="w3-btn w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-      <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
-    </div>
   </div>
 </div>
 
 <!-- The Contact Section -->
-<div class="w3-container w3-center w3-content w3-padding-24" style="max-width:800px" id="contact">
-    <h2 class="w3-wide">CONTACT</h2>
-    <p class="w3-opacity"><i>Coordonnées et horaires</i></p>
-    <div class="w3-row w3-padding-32">
-        <div class="w3-col m6 w3-large w3-margin-bottom w3-left-align">
-            <i class="fa fa-map-marker" style="width:30px"></i>Herlies, France<br>
-            <i class="fa fa-phone" style="width:30px"></i> Tél : +06 XX XX XX XX<br>
-            <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
-        </div>
-        <div class="w3-col m6 w3-large w3-margin-bottom w3-left-align">
-            <!--<form action="form.asp" target="_blank">-->
-            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                <i class="fa fa-clock-o fa-fw"></i> Horaires : <br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;margin-right:7px;"></i> Lundi : 9h-12h
-                / 13h-18h30<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mardi : 9h-12h
-                / 13h-18h30<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mercredi :
-                9h-13h
-                <br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Jeudi : 9h-12h
-                / 13h-18h30<br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Vendredi :
-                9h-19h
-                <br>
-                <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Samedi : 9h-14h<br>
-            </div>
-        </div>
+<div class="w3-container w3-center w3-padding-32" style="background-color:#5C5050;color:#FFFFFF;" id="contact">
+  <h2 class="w3-wide">CONTACT</h2>
+  <p class="w3-opacity"><i>Coordonnées et horaires</i></p>
+  <div class="w3-row w3-padding-32">
+    <div class="w3-col m6 w3-large w3-margin-bottom w3-center">
+      <div class="w3-left-align" style="display:inline-block;">
+        <i class="fa fa-map-marker" style="width:30px"></i>Herlies, France<br>
+        <i class="fa fa-phone" style="width:30px"></i> Tél : +06 XX XX XX XX<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
     </div>
+    <div class="w3-col m6 w3-large w3-margin-bottom w3-center">
+      <!--<form action="form.asp" target="_blank">-->
+      <div class="w3-row-padding w3-left-align" style="margin:0 -16px 8px -16px;display:inline-block;">
+        <i class="fa fa-clock-o fa-fw"></i> Horaires : <br>
+        <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;margin-right:7px;"></i> Lundi : 9h-12h / 13h-18h30<br>
+        <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mardi : 9h-12h / 13h-18h30<br>
+        <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Mercredi : 9h-13h
+        <br>
+        <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Jeudi : 9h-12h / 13h-18h30<br>
+        <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Vendredi : 9h-19h
+        <br>
+        <i class="fa fa-circle-o fa-fw" style="margin-left:6px;font-size:50%;;margin-right:7px;"></i> Samedi : 9h-14h<br>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Add Google Maps -->
