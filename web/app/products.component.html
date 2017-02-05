@@ -44,29 +44,10 @@
 
   <div class="w3-row">
 
-    <div class="w3-col s2" style="padding:16px;border-right-style:1px solid grey;">
-      <div class="w3-row w3-center w3-tooltip">
-        <img src="/images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
-        <p class="w3-text w3-tag w3-round-xlarge">Epicerie Sèche</p>
-      </div>
-      <div class="w3-row w3-center w3-tooltip">
-        <img src="/images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
-        <p class="w3-text w3-tag w3-round-xlarge">Epicerie Liquide</p>
-      </div>
-      <div class="w3-row w3-center w3-tooltip">
-        <img src="/images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
-        <p class="w3-text w3-tag w3-round-xlarge">Cosmétique</p>
-      </div>
-      <div class="w3-row w3-center w3-tooltip">
-        <img src="/images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
-        <p class="w3-text w3-tag w3-round-xlarge">Entretien</p>
-      </div>
-    </div>
-
-    <div class="w3-col s10" style="padding:16px 16px 32px 16px;">
+    <div class="w3-col s12" style="padding:16px 16px 32px 16px;">
       <div class="w3-row" style="padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid grey;">
         <span class="w3-opacity"><b>Filtres : </b></span>
-        <span *ngFor="let category of categories" class="w3-border w3-center w3-round-large w3-hover-black" style="padding:3px 6px 3px 6px;margin-left:8px;">{{category}}</span>
+        <span *ngFor="let category of categories" class="w3-border w3-center w3-round-large w3-hover-black" style="display:inline-block;padding:3px 6px 3px 6px;margin-left:8px;">{{category}}</span> 
       </div>
       <div *ngFor="let product of products" class="w3-row">
         <h3 class="w3-text-teal w3-padding-8" style="display:inline;">{{product.nom}}</h3>

@@ -18,6 +18,21 @@ var HomeComponent = (function () {
             { "title": "Maison", "url": "/images/maison.jpg" }
         ];
     }
+    HomeComponent.prototype.ngAfterViewInit = function () {
+        var myCenter = new google.maps.LatLng(50.5667, 2.85);
+        var mapProp = {
+            center: myCenter,
+            zoom: 14,
+            scrollwheel: false,
+            draggable: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({
+            position: myCenter,
+        });
+        marker.setMap(map);
+    };
     HomeComponent.prototype.ngOnInit = function () {
     };
     HomeComponent = __decorate([
