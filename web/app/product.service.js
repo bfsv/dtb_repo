@@ -28,8 +28,8 @@ var ProductService = (function () {
     ProductService.prototype.search = function (term) {
         var url = this.productsUrl + "/search/" + term;
         return this.http
-            .get(url)
-            .map(function (res) { return res.json(); });
+            .post(url, JSON.stringify(term), { headers: this.headers })
+            .map(function (res) { return res.json(); }).catch(this.handleError);
     };
     ProductService.prototype.getProductsCategories = function () {
         console.log(">>>>>> Get Products Categories :" + this.productsUrl);

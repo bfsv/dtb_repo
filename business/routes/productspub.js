@@ -31,10 +31,11 @@ router.get('/pub/categories', cors(), function (req, res, next) {
 
 
 /* Search for Product */
-router.get('/pub/search/:cat', cors(), function (req, res, next) {
-    console.log("Product to search for :" + req.params.cat);
+router.post('/pub/search/:cat', cors(), function (req, res, next) {
+    var categories = req.body;
+    console.log("Categories to match :" + JSON.stringify(categories));
     db.produits_pub.find(
-	{ categories : { $all : [req.params.cat] }}
+	{ categories : { $all : categories }}
 , function (err, products) {
         if (err) {
             res.send(err);

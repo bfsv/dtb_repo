@@ -23,11 +23,11 @@ export class ProductService {
 			.catch(this.handleError);
 	}
 
-	search(term: string): Observable<Product[]> {
+	search(term: String[]): Observable<Product[]> {
 		const url = `${this.productsUrl}/search/${term}`;
 		return this.http
-			.get(url)
-			.map((res: Response) => <Product[]>res.json());
+			.post(url, JSON.stringify(term), { headers: this.headers })
+			.map((res: Response) => <Product[]>res.json()).catch(this.handleError);
 	}
 
 	getProductsCategories(): Observable<String[]> {

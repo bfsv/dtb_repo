@@ -15,6 +15,7 @@ export class ProductsComponent implements OnInit {
 
   categories: String[];
   products: Product[];
+  searchedCategories: String[] = [];
 
   constructor(
     private productService: ProductService,
@@ -38,7 +39,13 @@ export class ProductsComponent implements OnInit {
 
   // Push a search term into the observable stream.
   search(term: string): void {
-    this.productService.search(term).subscribe((data: Product[]) => this.products = data,
+    if (this.searchedCategories.indexOf(term) != -1) {
+      this.searchedCategories.splice(this.searchedCategories.indexOf(term),1);
+    } else {
+      this.searchedCategories.push(term);
+    }
+    console.log('Searched Products : ' + this.searchedCategories);
+    this.productService.search(this.searchedCategories).subscribe((data: Product[]) => this.products = data,
       error => console.log(error),
       () => console.log('Search complete'));
   }

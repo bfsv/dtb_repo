@@ -15,6 +15,7 @@ var ProductsComponent = (function () {
     function ProductsComponent(productService, router) {
         this.productService = productService;
         this.router = router;
+        this.searchedCategories = [];
     }
     ProductsComponent.prototype.getProductsCategories = function () {
         var _this = this;
@@ -31,7 +32,14 @@ var ProductsComponent = (function () {
     // Push a search term into the observable stream.
     ProductsComponent.prototype.search = function (term) {
         var _this = this;
-        this.productService.search(term).subscribe(function (data) { return _this.products = data; }, function (error) { return console.log(error); }, function () { return console.log('Search complete'); });
+        if (this.searchedCategories.indexOf(term) != -1) {
+            this.searchedCategories.splice(this.searchedCategories.indexOf(term), 1);
+        }
+        else {
+            this.searchedCategories.push(term);
+        }
+        console.log('Searched Products : ' + this.searchedCategories);
+        this.productService.search(this.searchedCategories).subscribe(function (data) { return _this.products = data; }, function (error) { return console.log(error); }, function () { return console.log('Search complete'); });
     };
     ProductsComponent.prototype.ngOnInit = function () {
         this.getProductsCategories();
