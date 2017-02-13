@@ -13,14 +13,21 @@ import { ProductService } from './product.service';
 
 export class ProductsComponent implements OnInit {
 
-  categories: string[] = [
-    "Sec","Liquide","Cosmétique","Entretien","Farines","Pâtes", "Céréales"
-  ];
-
+  categories: String[];
   products: Product[];
+
   constructor(
     private productService: ProductService,
     private router: Router) { }
+
+  getProductsCategories(): void {
+    this.productService
+      .getProductsCategories()
+      .subscribe((data: String[]) => this.categories = data,
+      error => console.log(error),
+      () => console.log('Get all products categories complete'));
+  }
+
   getProducts(): void {
     this.productService
       .getProducts()
@@ -29,7 +36,15 @@ export class ProductsComponent implements OnInit {
       () => console.log('Get all Products complete'));
   }
 
+  // Push a search term into the observable stream.
+  search(term: string): void {
+    this.productService.search(term).subscribe((data: Product[]) => this.products = data,
+      error => console.log(error),
+      () => console.log('Search complete'));
+  }
+
   ngOnInit(): void {
+    this.getProductsCategories();
     this.getProducts();
   }
 

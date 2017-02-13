@@ -15,17 +15,26 @@ var ProductsComponent = (function () {
     function ProductsComponent(productService, router) {
         this.productService = productService;
         this.router = router;
-        this.categories = [
-            "Sec", "Liquide", "Cosmétique", "Entretien", "Farines", "Pâtes", "Céréales"
-        ];
     }
+    ProductsComponent.prototype.getProductsCategories = function () {
+        var _this = this;
+        this.productService
+            .getProductsCategories()
+            .subscribe(function (data) { return _this.categories = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all products categories complete'); });
+    };
     ProductsComponent.prototype.getProducts = function () {
         var _this = this;
         this.productService
             .getProducts()
             .subscribe(function (data) { return _this.products = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all Products complete'); });
     };
+    // Push a search term into the observable stream.
+    ProductsComponent.prototype.search = function (term) {
+        var _this = this;
+        this.productService.search(term).subscribe(function (data) { return _this.products = data; }, function (error) { return console.log(error); }, function () { return console.log('Search complete'); });
+    };
     ProductsComponent.prototype.ngOnInit = function () {
+        this.getProductsCategories();
         this.getProducts();
     };
     ProductsComponent = __decorate([

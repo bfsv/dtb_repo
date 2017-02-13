@@ -15,12 +15,27 @@ router.get('/pub', cors(), function (req, res, next) {
     });
 });
 
+
+/* Get categories list */
+router.get('/pub/categories', cors(), function (req, res, next) {
+    console.log("Get products categories");
+    db.produits_pub.distinct("categories",{}, function (err, categories) {
+        if (err) {
+            res.send(err);
+        } else {
+	    console.log("Categories list :" + JSON.stringify(categories));
+            res.json(categories);
+        }
+    });
+});
+
+
 /* Search for Product */
-router.get('/pub/search/:name', cors(), function (req, res, next) {
-    console.log("Product to search for :" + req.params.name);
-    db.produits_pub.find({
-        name: new RegExp("^" + req.params.name, "i")
-    }, function (err, products) {
+router.get('/pub/search/:cat', cors(), function (req, res, next) {
+    console.log("Product to search for :" + req.params.cat);
+    db.produits_pub.find(
+	{ categories : { $all : [req.params.cat] }}
+, function (err, products) {
         if (err) {
             res.send(err);
         } else {

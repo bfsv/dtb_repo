@@ -22,7 +22,22 @@ export class ProductService {
 			.map((res: Response) => <Product[]>res.json())
 			.catch(this.handleError);
 	}
-	
+
+	search(term: string): Observable<Product[]> {
+		const url = `${this.productsUrl}/search/${term}`;
+		return this.http
+			.get(url)
+			.map((res: Response) => <Product[]>res.json());
+	}
+
+	getProductsCategories(): Observable<String[]> {
+		console.log(">>>>>> Get Products Categories :" + this.productsUrl);
+		const url = `${this.productsUrl}/categories`;
+		return this.http.get(url)
+			.map((res: Response) => <String[]>res.json())
+			.catch(this.handleError);
+	}
+
 	private handleError(error: any): Promise<any> {
 		console.error('An error occurred in ProductService : ', error); // for demo purposes only
 		return Promise.reject(error.message || error);

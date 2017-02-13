@@ -25,6 +25,19 @@ var ProductService = (function () {
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
+    ProductService.prototype.search = function (term) {
+        var url = this.productsUrl + "/search/" + term;
+        return this.http
+            .get(url)
+            .map(function (res) { return res.json(); });
+    };
+    ProductService.prototype.getProductsCategories = function () {
+        console.log(">>>>>> Get Products Categories :" + this.productsUrl);
+        var url = this.productsUrl + "/categories";
+        return this.http.get(url)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
     ProductService.prototype.handleError = function (error) {
         console.error('An error occurred in ProductService : ', error); // for demo purposes only
         return Promise.reject(error.message || error);
