@@ -9,8 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(router) {
+        router.events.subscribe(function (s) {
+            if (s instanceof router_1.NavigationEnd) {
+                var tree = router.parseUrl(router.url);
+                if (tree.fragment) {
+                    var element = document.querySelector("#" + tree.fragment);
+                    if (element) {
+                        element.scrollIntoView(element);
+                    }
+                }
+            }
+        });
     }
     // Used to toggle the menu on small screens when clicking on the menu button
     AppComponent.prototype.toggleMenu = function () {
@@ -32,7 +44,7 @@ var AppComponent = (function () {
             templateUrl: 'app.component.html',
             styleUrls: ['app.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], AppComponent);
     return AppComponent;
 }());
